@@ -4,20 +4,12 @@ public class Main
 {
     public static void main(String[] args)  //Metodo Main
     {
-        MenuActividad8();
+        showMenu();
     }
 
-    public static void MenuActividad8()     //Permite poder implementar el JOptionPane al método main
+    public static void showMenu()     //Permite poder implementar el JOptionPane al método main
     {
         Deck baraja = new Deck();   //Se crea un objeto de tipo Deck que se usará para el programa
-
-        //Opciones del programa
-        String[] opcionesMenuPrincipal = {
-                "A) Reordenar baraja",
-                "B) Agarrar carta de hasta arriba",
-                "C) Agarrar carta aleatoria",
-                "D) Pedir mano",
-                "E) Salir del programa"};
 
         String eleccionCompleta;        //Captura el valor de la string elegida completa
         char eleccionSwit ='0';         //Guarda el primer caracter de la opcion elegida para poder utilizarse en un switch
@@ -31,19 +23,19 @@ public class Main
             try
             {
                 //Despliega el panel de opciones posibles dentro del programa
-                eleccionCompleta = (String) JOptionPane.showInputDialog(null,"Seleccione una opcion: ", "MENU ACTIVIDAD 8: Baraja Poker", JOptionPane.QUESTION_MESSAGE,null, opcionesMenuPrincipal, opcionesMenuPrincipal[0] );
+                eleccionCompleta = (String) JOptionPane.showInputDialog(null,"Seleccione una opcion:\n\t1) Reordenar baraja\n\t2) Agarrar carta de hasta arriba\n\t3) Agarrar carta aleatoria\n\t4) Pedir mano\n\n\t0) Salir del programa", "MENU ACTIVIDAD 9: Baraja Poker v2.0", JOptionPane.QUESTION_MESSAGE);
                 eleccionSwit = eleccionCompleta.charAt(0);
             }
 
             catch(NullPointerException a) //El usuario seleccionó la opcion de cerrar el mensaje o de cancelar
             {
                 //Se pregunta si el usuario desea salir del programa usando unicamente la opcion de si o no
-                salirProceso = JOptionPane.showConfirmDialog(null,"Quieres salir del programa?", "ACTIVIDAD 8: Baraja Poker", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                salirProceso = JOptionPane.showConfirmDialog(null,"Quieres salir del programa?", "ACTIVIDAD 9: Baraja Poker v2.0", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
                 //Si presiona Si
                 if(salirProceso == JOptionPane.YES_OPTION)
                 {
-                    JOptionPane.showMessageDialog(null,"Programa terminado", "ACTIVIDAD 8", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Programa terminado", "ACTIVIDAD 9: Baraja Poker v2.0", JOptionPane.INFORMATION_MESSAGE);
                     System.exit(0);
                 }
 
@@ -58,28 +50,33 @@ public class Main
             //Dependiendo de la opción elegida, se ejecuta la acción especifica
             switch(eleccionSwit)
             {
-                case 'A':
+                case '1':
                     baraja.Shuffle(false);
                     accionValida = false;
                     break;
 
-                case 'B':
+                case '2':
                     baraja.Head();
                     accionValida = false;
                     break;
 
-                case 'C':
+                case '3':
                     baraja.Pick();
                     accionValida = false;
                     break;
 
-                case 'D':
+                case '4':
                     baraja.Hand();
                     accionValida = false;
                     break;
 
-                case 'E':
+                case '0':
                     System.exit(0);
+                    break;
+
+                default:
+                    JOptionPane.showMessageDialog(null,"Comando no reconocido, vuelva a intentarlo", "ACTIVIDAD 9 Baraja Poker v2.0", JOptionPane.ERROR_MESSAGE);
+                    accionValida = false;
                     break;
             }
         }
