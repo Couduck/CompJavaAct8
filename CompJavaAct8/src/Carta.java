@@ -25,4 +25,3 @@ public class Carta
         return this.valor;
     }
 }
-
