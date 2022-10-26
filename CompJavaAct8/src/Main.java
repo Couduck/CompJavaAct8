@@ -23,7 +23,7 @@ public class Main
             try
             {
                 //Despliega el panel de opciones posibles dentro del programa
-                eleccionCompleta = (String) JOptionPane.showInputDialog(null,"Seleccione una opcion:\n\t1) Reordenar baraja\n\t2) Agarrar carta de hasta arriba\n\t3) Agarrar carta aleatoria\n\t4) Pedir mano\n\n\t0) Salir del programa", "MENU ACTIVIDAD 9: Baraja Poker v2.0", JOptionPane.QUESTION_MESSAGE);
+                eleccionCompleta = (String) JOptionPane.showInputDialog(null,"Seleccione una opcion:\n\t1) Reordenar baraja\n\t2) Agarrar carta de hasta arriba\n\t3) Agarrar carta aleatoria\n\t4) Pedir mano\n\n\t0) Salir del programa", "MENU ACTIVIDAD 10: Baraja Poker v3.0", JOptionPane.QUESTION_MESSAGE);
                 eleccionSwit = eleccionCompleta.charAt(0);
 
                 switch(eleccionSwit) //Dependiendo de la opción elegida, se ejecuta la acción especifica, esto se movió aquí para poder atender mejor la excepción generada por no ingresar nada en la caja de texto
@@ -53,7 +53,7 @@ public class Main
                         break;
 
                     default:
-                        JOptionPane.showMessageDialog(null,"Comando no reconocido, vuelva a intentarlo", "ACTIVIDAD 9 Baraja Poker v2.0", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null,"Comando no reconocido, vuelva a intentarlo", "ACTIVIDAD 10 Baraja Poker v3.0", JOptionPane.ERROR_MESSAGE);
                         accionValida = false;
                         break;
                 }
@@ -62,12 +62,12 @@ public class Main
             catch(NullPointerException a) //El usuario seleccionó la opcion de cerrar el mensaje o de cancelar
             {
                 //Se pregunta si el usuario desea salir del programa usando unicamente la opcion de si o no
-                salirProceso = JOptionPane.showConfirmDialog(null,"Quieres salir del programa?", "ACTIVIDAD 9: Baraja Poker v2.0", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                salirProceso = JOptionPane.showConfirmDialog(null,"Quieres salir del programa?", "ACTIVIDAD 10 Baraja Poker v3.0", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
 
                 //Si presiona Si
                 if(salirProceso == JOptionPane.YES_OPTION)
                 {
-                    JOptionPane.showMessageDialog(null,"Programa terminado", "ACTIVIDAD 9: Baraja Poker v2.0", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null,"Programa terminado", "ACTIVIDAD 10 Baraja Poker v3.0", JOptionPane.INFORMATION_MESSAGE);
                     System.exit(0);
                 }
 
@@ -80,7 +80,7 @@ public class Main
 
             catch(IndexOutOfBoundsException b) //El usuario no ingreso nada y dió aceptar de todas formas
             {
-                JOptionPane.showMessageDialog(null,"Comando no reconocido, vuelva a intentarlo", "ACTIVIDAD 9 Baraja Poker v2.0", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Comando no reconocido, vuelva a intentarlo", "ACTIVIDAD 10 Baraja Poker v3.0", JOptionPane.ERROR_MESSAGE);
                 accionValida = false;
             }
         }
